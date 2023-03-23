@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/public/style/output.css">
+		<title>DierenDoos</title>
+	</head>
+
+	<body class="bg-neutral-800">
+
+		{% if session.user %}
+			<header class="px-16 py-3 flex items-center text-neutral-100 text-3xl justify-between">
+				<div class="flex items-center gap-8">
+					<a href="/binsta" class="hover:text-violet-300">Binsta</a>
+				</div>
+				<div class="search">
+					<form action="" method="GET">
+						<input type="text" name="search" id="search" placeholder="search" class="py-2 px-3 text-sm rounded text-black">
+					</form>
+				</div>
+				<div class="flex gap-3 content-center">
+					<a href="/account"><img src="../public/uploads/{{session.user.img}}" alt="{{session.user.img}}" class="w-12 h-12 object-cover object-center rounded-full hover:pointer text-sm"></a>
+					<a href="/binsta/create"><img src="../public/img/add.png" alt="create user" class="w-12 h-12 object-cover object-center rounded-full hover:pointer text-sm"></a>
+					<form action="" method="post" class="text-center">
+						<button class="hover:text-violet-300 text-md min-h-full" name="logout">Log out</button>
+					</form>
+				</div>
+			</header>
+		{% endif %}
+
+		<div class="container my-16 mx-auto max-w-3xl"> {% block body %}{% endblock body %}
+			</div>
+		</body>
+
+	</html>

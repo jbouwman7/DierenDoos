@@ -1,0 +1,19 @@
+{
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "files": [
+            "helpers.php",
+            "rb.php"
+        ],
+        "classmap": [
+            "controllers/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
+}
