@@ -1,0 +1,24 @@
+{% extends "./layouts/app.twig" %}
+
+{% block body %}
+{# Maak hier een form aan #}
+<form action="" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price">
+
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image">
+
+    <label for="category">Name</label>
+    <select name="category" id="category">
+        
+    </select>
+
+</form>
+{% endblock %}

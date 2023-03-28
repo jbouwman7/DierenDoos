@@ -101,4 +101,44 @@ class BaseController
     {
         $_SESSION['user']['name'] = $_POST['username'];
     }
+
+    public function validCreateItem()
+    {
+        unset($_SESSION['errors']);
+        if ($_POST['name'] == '' || $_POST['description'] == '' || $_POST['price'] == '' || $_POST['image'] == '' || $_POST['category'] == '') {
+            $_SESSION['errors']['items'][] = 'All fields are required';
+        }
+
+        if (strlen($_POST['description']) > 300) {
+            $_SESSION['errors']['items'][] = "Description can't be longer than 300 characters";
+        }
+
+        $items = R::FindOne('shop_items', 'name= ? ', [$_POST['name']]);
+
+        if ($_POST['name'] == $items['name']) {
+            $_SESSION['errors']['items'][] = 'Name is already in use';
+        }
+
+        return empty($_SESSION['errors']);
+    }
+
+    public function validCreateCategories()
+    {
+        unset($_SESSION['errors']);
+        if ($_POST['name'] == '' || $_POST['description'] == '' || $_POST['price'] == '' || $_POST['image'] == '' || $_POST['category'] == '') {
+            $_SESSION['errors']['categories'][] = 'All fields are required';
+        }
+
+        if (strlen($_POST['description']) > 300) {
+            $_SESSION['errors']['categories'][] = "Description can't be longer than 300 characters";
+        }
+
+        $categories = R::FindOne('categories', 'name= ? ', [$_POST['name']]);
+
+        if ($_POST['name'] == $categories['name']) {
+            $_SESSION['errors']['categories'][] = 'Name is already in use';
+        }
+
+        return empty($_SESSION['errors']);
+    }
 }

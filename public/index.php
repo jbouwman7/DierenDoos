@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-$r = R::setup('mysql:host=localhost;dbname=binsta', 'bit_academy', 'bit_academy');
+$r = R::setup('mysql:host=localhost;dbname=dierendoos', 'bit_academy', 'bit_academy');
 
 $path = getPath();
 
@@ -12,7 +12,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header('location:../user/login');
 } else {
-    $controllerName = ucwords($path[0]) ?: 'Binsta';
+    $controllerName = ucwords($path[0]) ?: 'Shop';
     $controller = $controllerName . 'Controller';
     $methodName = $path[1] ?? 'index';
 
