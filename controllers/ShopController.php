@@ -4,23 +4,14 @@ class ShopController extends BaseController
 {
     public function index()
     {
+        $categories = R::findAll('categories');
+        $items = R::findAll('shopitems');
         $users = R::findAll('users');
-
         showTemplate('shops/index.twig', [
             "users" => $users,
+            "categories" => $categories,
+            "items" => $items,
         ]);
-    }
-
-    public function item()
-    {
-        showTemplate('shops/item.twig');
-    }
-
-    public function create()
-    {
-        $var = "tes";
-        showTemplate('shops/item.twig', [
-        "test" => $var,]);
     }
 
 

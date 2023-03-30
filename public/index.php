@@ -36,4 +36,4 @@ if (isset($_POST['logout'])) {
     }
 }
 
-var_dump($_FILES) . PHP_EOL;
+// var_dump($_FILES) . PHP_EOL;

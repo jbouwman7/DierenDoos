@@ -5,8 +5,8 @@ class AdminController extends BaseController
     private $error;
     public function items()
     {
-        if (isset($_SESSION['errors']['categories'])) {
-            $this->error = $_SESSION['errors']['categories'][0];
+        if (isset($_SESSION['errors']['items'])) {
+            $this->error = $_SESSION['errors']['items'][0];
             unset($_SESSION['errors']);
         }
         // Haal voor de items de categorieën op
@@ -58,8 +58,11 @@ class AdminController extends BaseController
  
             $categorie = R::dispense('categories'); // Werkt
             $categorie->name = $_POST['name']; // Werkt
-            $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
-            $categorie->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); // Werkt waarschijnlijk
+
+            if (isset($_POST['image'])) {
+                $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
+                $categorie->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); // Werkt waarschijnlijk
+            }
             R::store($categorie); // Werkt
 
             $this->moveUploadedImg("categories"); // Werkt
