@@ -7,7 +7,6 @@ class BaseController
         $bean = R::findOne($typeOfBean, 'id =' . $queryStringKey);
         return $bean;
     }
-
     public function validUser()
     {
         $users = R::findAll('users');
@@ -76,11 +75,12 @@ class BaseController
         return empty($_SESSION['errors']);
     }
 
-    public function moveUploadedImg()
+    public function moveUploadedImg($location)
     {
-        $tmpName = $_FILES['img']['tmp_name'];
-        $name = strtolower(basename($_FILES['img']['name']));
-        $targetDir = "$_SERVER[DOCUMENT_ROOT]/public/uploads/$name";
+        $tmpName = $_FILES['image']['tmp_name'];
+        $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
+        $name = strtolower(bin2hex($_FILES['image']['name']). '.' . $fileType);
+        $targetDir = "$_SERVER[DOCUMENT_ROOT]/public/img/$location/$name";
         move_uploaded_file($tmpName, "$targetDir");
     }
 
@@ -125,12 +125,8 @@ class BaseController
     public function validCreateCategories()
     {
         unset($_SESSION['errors']);
-        if ($_POST['name'] == '' || $_POST['description'] == '' || $_POST['price'] == '' || $_POST['image'] == '' || $_POST['category'] == '') {
+        if ($_POST['name'] == '' || $_POST['image'] == '') {
             $_SESSION['errors']['categories'][] = 'All fields are required';
-        }
-
-        if (strlen($_POST['description']) > 300) {
-            $_SESSION['errors']['categories'][] = "Description can't be longer than 300 characters";
         }
 
         $categories = R::FindOne('categories', 'name= ? ', [$_POST['name']]);
@@ -141,4 +137,5 @@ class BaseController
 
         return empty($_SESSION['errors']);
     }
+
 }

@@ -9,12 +9,13 @@
 		<title>DierenDoos</title>
 	</head>
 
-	<body class="bg-neutral-800">
+	<body class="bg-light">
 
-		{% if session.user %}
+
 			<header class="px-16 py-3 flex items-center text-neutral-100 text-3xl justify-between">
 				<div class="flex items-center gap-8">
-					<a href="/binsta" class="hover:text-violet-300">Binsta</a>
+					<a href="../admin/categories" class="hover:text-violet-300">Maak categorie aan</a>
+					<a href="../admin/items" class="hover:text-violet-300">Maak item aan</a>
 				</div>
 				<div class="search">
 					<form action="" method="GET">
@@ -29,7 +30,6 @@
 					</form>
 				</div>
 			</header>
-		{% endif %}
 
 		<div class="container my-16 mx-auto max-w-3xl"> {% block body %}{% endblock body %}
 			</div>
