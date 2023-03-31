@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends BaseController
+class AccountController extends BaseController
 {
     private $error = '';
     private array $users;

@@ -2,16 +2,17 @@
 
 class ShopController extends BaseController
 {
-
     public function index()
     {
-        $var = "je meoder";
-        $getFucked = "got fucked";
-        $who = ['iets', 'anders'];
+        $categories = R::findAll('categories');
+        $items = R::findAll('shopitems');
+        $users = R::findAll('users');
         showTemplate('shops/index.twig', [
-            "error" => $var,
-            "ietsAnders" => $getFucked,
-            "whoThis" => $who,
+            "users" => $users,
+            "categories" => $categories,
+            "items" => $items,
         ]);
     }
+
+
 }

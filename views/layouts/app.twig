@@ -11,15 +11,17 @@
 
 	<body class="bg-light">
 
-		{% if session.user %}
 			<header class="px-16 py-3 flex items-center text-3xl justify-between text-dark bg-primary">
 				<div class="flex items-center gap-8">
 					<a href="/shops" class="hover:text-contrast">DierenDoos</a>
 				</div>
-				<div class="search">
-					<form action="" method="GET">
+				<div class="content">
+					{% for categorie in categories %}
+					<a href="">{{categorie.name}}</a>
+					{# <form action="" method="GET">
 						<input type="text" name="search" id="search" placeholder="search" class="py-2 px-3 text-sm rounded text-dark">
-					</form>
+					</form> #}
+					{% endfor %}
 				</div>
 				<div class="flex gap-3 content-center">
 					<form action="" method="post" class="text-center">
@@ -27,7 +29,6 @@
 					</form>
 				</div>
 			</header>
-		{% endif %}
 
 		<div class="container my-16 mx-auto max-w-3xl"> {% block body %}{% endblock body %}
 			</div>

@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-$r = R::setup('mysql:host=localhost;dbname=binsta', 'bit_academy', 'bit_academy');
+$r = R::setup('mysql:host=localhost;dbname=dierendoos', 'bit_academy', 'bit_academy');
 
 $path = getPath();
 
@@ -35,3 +35,6 @@ if (isset($_POST['logout'])) {
         error(404, 'Controller not found');
     }
 }
+echo "<pre>";
+var_dump($_FILES);
+echo "</pre>";
