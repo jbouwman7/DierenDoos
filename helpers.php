@@ -2,13 +2,16 @@
 
 function showTemplate($template, $data = [])
 {
-    $loader = new \Twig\Loader\FilesystemLoader('../views');
-    $twig = new \Twig\Environment($loader);
+    $loader = new \Twig\Loader\FilesystemLoader('../views/');
+    $twig = new \Twig\Environment(
+        $loader,
+        ['debug' => true]
+    );
     if (isset($_SESSION)) {
         $twig->addGlobal('session', $_SESSION);
     }
-    $template = $twig->load($template);
-    $template->display($data);
+    $twig->addExtension(new \Twig\Extension\DebugExtension());
+    $twig->display($template, $data);
 }
 
 function error($errorNumber, $errorMessege)

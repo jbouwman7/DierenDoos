@@ -12,7 +12,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header('location:../user/login');
 } else {
-    $controllerName = ucwords($path[0]) ?: 'Binsta';
+    $controllerName = ucwords($path[0]) ?: 'Shop';
     $controller = $controllerName . 'Controller';
     $methodName = $path[1] ?? 'index';
 
