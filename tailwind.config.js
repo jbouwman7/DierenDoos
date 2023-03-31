@@ -3,10 +3,9 @@ module.exports = {
   content: ["./views/**/*.twig"],
   theme: {
     colors: {
-      'navbar': '#FFBB29',
-      'catdivs': '#FCE055',
-      'black': 'black',
-      'white': 'white',
+      'primary': '#FFBB29',
+      'secondary': '#FCE055',
+      'light': '#FAF6EE',
     },
     container: {
       center: true,

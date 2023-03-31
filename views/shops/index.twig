@@ -1,25 +1,23 @@
 {% extends "./layouts/app.twig" %}
 
 {% block body %}
-{# Dit lukte allemaal niet dus ik ben er maar mee gestopt 😂 #}
 
-<h1>Test Shop index</h1>
-<section id="categories">
+<section id="categories" class="flex">
 	{% for categorie in categories %}
-	<div class="w-52 bg-catdivs">
-		<img src="../../public/img/categories/646f672e706e67.png" alt="">
+	<div class="w-52 bg-secondary">
+		<img src="../../public/img/categories/{{categorie.image}}" alt="">
 		<p class="text-center">{{categorie.name}}</p>
 	</div>
 	{% endfor %}
 </section>
 
 
-<section class="favorite_animals">
-	<h1>Favoriet van elk dier</h1>
+<h1>Favoriet van elk dier</h1>
+<section id"favorite_animals" class="flex">
 	{% for item in items %}
-	<div class="rounded-t-lg bg-white w-56 h-48">
+	<div class="rounded-t-lg bg-light w-56 h-48">
 		<img class="ml-5 mt-5" src="../../public/img/items/7465737470726f64756374312e6a7067.jpeg" alt="">
-		<div class="bg-catdivs rounded-b-lg h-9">
+		<div class="bg-secondary rounded-b-lg h-9">
 			<p>{{item.name}} €{{item.price}}</p>
 		</div>
 	</div>
