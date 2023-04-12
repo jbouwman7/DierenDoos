@@ -35,5 +35,3 @@ if (isset($_POST['logout'])) {
         error(404, 'Controller not found');
     }
 }
-
-// var_dump($_FILES) . PHP_EOL;
