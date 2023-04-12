@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/public/style/output.css">
-		<title>DierenDoos</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/public/style/output.css">
+	<title>DierenDoos</title>
+</head>
 
-	<body class="bg-light">
+<body class="bg-light">
 
-			<header class="px-16 py-3 flex items-center text-3xl justify-between text-dark bg-primary">
-				<div class="flex items-center gap-8">
-					<a href="/shops" class="hover:text-contrast">DierenDoos</a>
-				</div>
-				<div class="content">
-					{% for categorie in categories %}
-					<a href="">{{categorie.name}}</a>
-					{# <form action="" method="GET">
-						<input type="text" name="search" id="search" placeholder="search" class="py-2 px-3 text-sm rounded text-dark">
+	<header class="py-3 text-3xl text-dark bg-primary">
+		<div class="max-w-6xl justify-between flex items-center mx-auto">
+			<div class="flex items-center gap-8">
+				<a href="/shops" class="hover:text-contrast">DierenDoos</a>
+			</div>
+			<div class="content">
+				{% for categorie in categories %}
+				<a href="">{{categorie.name}}</a>
+				{# <form action="" method="GET">
+					<input type="text" name="search" id="search" placeholder="search" class="py-2 px-3 text-sm rounded text-dark">
 					</form> #}
 					{% endfor %}
-				</div>
-				<div class="flex gap-3 content-center">
-					<form action="" method="post" class="text-center">
-						<button class="hover:text-contrast text-md min-h-full" name="logout">Log out</button>
-					</form>
-				</div>
-			</header>
+					</div>
+					<div class="flex gap-3 content-center">
+						<form action="" method="post" class="text-center">
+							<button class="hover:text-contrast text-md min-h-full" name="logout">Log out</button>
+						</form>
+					</div>
+		</div>
+	</header>
 
-		<div class="container my-16 mx-auto max-w-3xl"> {% block body %}{% endblock body %}
-			</div>
-		</body>
+	<div class="container my-16 mx-auto max-w-6xl"> {% block body %}{% endblock body %}
+	</div>
+	</body>
 
-	</html>
+</html>
