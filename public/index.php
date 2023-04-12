@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-$r = R::setup('mysql:host=localhost;dbname=binsta', 'bit_academy', 'bit_academy');
+$r = R::setup('mysql:host=localhost;dbname=dierendoos', 'bit_academy', 'bit_academy');
 
 $path = getPath();
 
