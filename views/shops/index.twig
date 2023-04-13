@@ -2,27 +2,36 @@
 
 {% block body %}
 
-<section id="categories" class="flex">
+{# <section id="categories" class="flex">
 	{% for categorie in categories %}
 	<div class="w-52 bg-secondary">
 		<img src="../../public/img/categories/{{categorie.image}}" alt="">
 		<p class="text-center">{{categorie.name}}</p>
 	</div>
 	{% endfor %}
-</section>
+</section> #}
 
 
-<h1>Favoriet van elk dier</h1>
-<section id"favorite_animals" class="flex">
-	{% for item in items %}
-	<div class="rounded-t-lg bg-light w-56 h-48">
-		<img class="ml-5 mt-5" src="../../public/img/items/7465737470726f64756374312e6a7067.jpeg" alt="">
-		<div class="bg-secondary rounded-b-lg h-9">
-			<p>{{item.name}} €{{item.price}}</p>
+<section id"favorite_animals" class="flex flex-row">
+	{% for categorie in categories %}
+	<div class="grid grid-cols-4 gap-4 rounded-t-lg bg-light w-56 h-48 flex-row bg-secondary">
+		<div class="w-56 h-48">
+			<img class="ml-5 mt-5" src="../../public/img/categories/{{categorie.image}}" alt="">
+			<p>{{categorie.name}}</p>
 		</div>
 	</div>
 	{% endfor %}
+
 </section>
+{# <div class="rounded-t-lg bg-light w-56 h-48 flex-row">
+	<div class="flex flex-row">
+		<img class="ml-5 mt-5" src="../../public/img/items/{{item.image}}" alt="">
+		<div class="bg-secondary rounded-b-lg h-9">
+			<p>{{item.name}}
+				€{{item.price}}</p>
+		</div>
+	</div>
+</div> #}
 
 <section class="questions mt-14">
 	<h1 class="text-base font-semibold leading-7 text-gray-900">Vragen over onze producten?</h1>
@@ -77,22 +86,21 @@
 								class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
 						</div>
 					</div>
-					
-					
-					</div>
-					</div>
-					
-					</div>
-					
-					</form>
-					
-					
-					</section>
-					
-					<section class="brand mt-14">
-						<h1>Door ons verkochte merken</h1>
-					</section>
-					
-					<footer class="mt-14">
-					</footer>
+
+
+				</div>
+			</div>
+
+		</div>
+
+	</form>
+
+
+</section>
+
+<section class="brand mt-14">
+	<h1>Door ons verkochte merken</h1>
+</section>
+
+<footer class="mt-14"></footer>
 {% endblock %}
