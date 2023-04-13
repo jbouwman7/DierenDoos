@@ -36,5 +36,5 @@ if (isset($_POST['logout'])) {
     }
 }
 echo "<pre>";
-var_dump($_FILES);
+var_dump($_POST);
 echo "</pre>";

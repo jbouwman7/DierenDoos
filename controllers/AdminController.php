@@ -19,25 +19,24 @@ class AdminController extends BaseController
 
     public function itemsPost()
     {
-        // Verwerk hier post
-        // if ($this->validCreateItem()) {
+        if ($this->validCreateItem()) {
             $item = R::dispense('shopitems');
             $item->name = $_POST['name'];
             $item->description = $_POST['description'];
             $item->price = $_POST['price'];
 
             $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
-            $item->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); // Werkt waarschijnlijk
+            $item->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); 
             
             $item->category = $_POST['category'];
             
             R::store($item);
             $this->moveUploadedImg("items");
-            // header('location:../shops/index');
-        // } else {
-        //     $this->validCreateItem();
-        //     header('location:items');
-        // }
+            header('location:items');
+        } else {
+            $this->validCreateItem();
+            header('location:items');
+        }
     }
 
 
@@ -54,23 +53,22 @@ class AdminController extends BaseController
 
     public function categoriesPost()
     {
-        if ($this->validCreateCategories()) { // Werkt niet
+        if ($this->validCreateCategories()) { 
  
             $categorie = R::dispense('categories');
             $categorie->name = $_POST['name'];
 
             $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
-            $categorie->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); // Werkt waarschijnlijk
+            $categorie->image = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType); 
             
             
             R::store($categorie);
             $this->moveUploadedImg("categories");
 
-            header('location:categories'); // werkt niet
+            header('location:categories'); 
         } else {
             $this->validCreateCategories();
             header('location:categories');
         }
     }
-    // Maak hier alles aan voor de categories
 }
