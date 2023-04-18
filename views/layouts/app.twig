@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/public/style/output.css">
-		<title>DierenDoos</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/public/style/output.css">
+	<title>DierenDoos</title>
+	<script src="/public/js/script.js" defer></script>
+</head>
 
-	<body class="bg-light">
-		<header class=" bg-primary text-3xl">
-			<div class="max-w-6xl justify-between py-3 flex items-center mx-auto">
-				<div class="flex items-center gap-8">
-					<a href="/binsta" class="hover:text-violet-300">Binsta</a>
+<body class="bg-black">
+	<header class="py-3 text-3xl text-dark bg-primary">
+		<div class="max-w-6xl justify-between flex items-center mx-auto">
+			<div class="flex items-center gap-8">
+				<a href="/shops" class="hover:text-contrast">DierenDoos</a>
 				</div>
 				<div class="content">
-					<form action="" method="GET">
-						<input type="text" name="search" id="search" placeholder="search" class="py-2 px-3 text-sm rounded text-dark">
-					</form>
-					{% for categorie in categories %}
-						<a href="../admin/categories" class="hover:text-violet-300 capitalize">{{categorie.name}}</a>
-					{% endfor %}
+				{% for categorie in categories %}
+				<a href="">{{categorie.name}}</a>
+				{% endfor %}
 				</div>
-				{# <div class="flex gap-3 content-center">
-					<a href="/account"><img src="../public/uploads/{{session.user.img}}" alt="{{session.user.img}}" class="w-12 h-12 object-cover object-center rounded-full hover:pointer text-sm"></a>
-					<a href="/binsta/create"><img src="../public/img/add.png" alt="create user" class="w-12 h-12 object-cover object-center rounded-full hover:pointer text-sm"></a>
-					<form action="" method="post" class="text-center">
-						<button class="hover:text-contrast text-md min-h-full" name="logout">Log out</button>
-					</form>
-				</div> #}
+			<div class="flex gap-3 content-center">
+				<form action="" method="post" class="text-center">
+					<button class="hover:text-contrast text-md min-h-full" name="logout">Log out</button>
+				</form>
 			</div>
-		</header>
-
-		<div class="container items-center justify-center text-center my-16 mx-auto max-w-6xl"> 
-			{% block body %}{% endblock body %}
+			</div>
+			</header>
+	{# zet hier my-16 als je wilt dat de content wat van de header af komt te staan#}
+	{% block hero %}{% endblock hero %}
+	<div class="container mx-auto max-w-6xl w-full"> {% block body %}{% endblock body %}
+	</div>
+	<footer class="mt-14 bg-secondary w-full">
+		<div class="max-w-6xl mx-auto flex justify-end">
+			<ul class="list-none">
+				<li>Categorie</li>
+				{% for categorie in categories %}
+				<li class="ml-5">{{categorie.name}}</li>
+				{% endfor %}
+			</ul>
 		</div>
-	</body>
+	</footer>
+</body>
+
 </html>

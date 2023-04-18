@@ -5,5 +5,8 @@
   },
   "scripts": {
     "watch": "npx tailwindcss -i ./public/style/input.css -o ./public/style/output.css --watch"
+  },
+  "dependencies": {
+    "tw-elements": "^1.0.0-beta2"
   }
 }
