@@ -5,16 +5,15 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/public/style/output.css">
+		<link rel="stylesheet" href="./public/style/output.css">
 		<title>DierenDoos</title>
 	</head>
 
 	<body class="bg-light">
 
-		{% if session.user %}
 			<header class="px-16 py-3 flex items-center text-3xl justify-between text-dark bg-primary">
 				<div class="flex items-center gap-8">
-					<a href="/shops" class="hover:text-contrast">DierenDoos</a>
+					<a href="/accounts/login" class="hover:text-contrast">DierenDoos</a>
 				</div>
 				<div class="search">
 					<form action="" method="GET">
@@ -27,7 +26,6 @@
 					</form>
 				</div>
 			</header>
-		{% endif %}
 
 		<div class="container my-16 mx-auto max-w-3xl"> {% block body %}{% endblock body %}
 			</div>

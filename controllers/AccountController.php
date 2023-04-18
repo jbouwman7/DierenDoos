@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends BaseController
+class AccountController extends BaseController
 {
     private $error = '';
     private array $users;
@@ -17,7 +17,7 @@ class UserController extends BaseController
             unset($_SESSION['errors']);
         }
 
-        showTemplate('users/login.twig', [
+        showTemplate('accounts/login.twig', [
             'users' => $this->users,
             'error' => $this->error,
         ]);
@@ -29,7 +29,7 @@ class UserController extends BaseController
 
         if ($userChecked) {
             $this->loginUser();
-            header('location:../binsta');
+            header('location:index.twig');
         } else {
             $_SESSION['errors']['login'][] = "Invalid username or password";
             header('location:login');
@@ -43,7 +43,7 @@ class UserController extends BaseController
             unset($_SESSION['errors']);
         }
 
-        showTemplate('users/register.twig', [
+        showTemplate('accounts/register.twig', [
             'error' => $this->error,
         ]);
     }
