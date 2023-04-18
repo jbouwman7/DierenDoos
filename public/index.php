@@ -36,6 +36,6 @@ if (isset($_POST['logout'])) {
     }
 }
 
-// echo "<pre>";
-// var_dump($_SESSION);
-// echo "</pre>";
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";

@@ -10,6 +10,7 @@ module.exports = {
         'primary': '#FFBB29',
         'secondary': '#FCE055',
         'contrast': '#0898CC',
+        'contrast-hover': '#0586b5',
         'light': '#FAF6EE',
         'dark': '#130A0A',
       },
