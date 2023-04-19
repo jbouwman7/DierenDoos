@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./views/**/*.twig",
-    
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
     colors: {
@@ -23,6 +23,6 @@ module.exports = {
       },
     },
   },
-  plugins: [
-  ],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
+  darkMode: "class"
 }

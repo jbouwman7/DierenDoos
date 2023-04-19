@@ -15,51 +15,54 @@
 		<div class="max-w-6xl justify-between flex items-center mx-auto">
 			<div class="flex items-center gap-8">
 				<a href="/shops" class="hover:text-contrast">DierenDoos</a>
-				</div>
-				<div class="content">
+			</div>
+			<div class="content">
 				{% for categorie in categories %}
 				<a href="">{{categorie.name}}</a>
 				{% endfor %}
-				</div>
+			</div>
 			<div class="flex gap-3 content-center">
 				<form action="" method="post" class="text-center">
 					<button class="hover:text-contrast text-md min-h-full" name="logout">Log out</button>
 				</form>
 			</div>
-			</div>
-			</header>
+		</div>
+	</header>
 	{# zet hier my-16 als je wilt dat de content wat van de header af komt te staan#}
 	{% block hero %}{% endblock hero %}
 	<div class="container mx-auto max-w-6xl w-full"> {% block body %}{% endblock body %}
 	</div>
-<footer class="mt-14">
+	<footer class="mt-14">
 
-	<svg width="100%" height="auto" viewBox="0 0 1440 127" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M1440 126.5V84.4997C1440 84.4997 1363 38.999 1171 38.999C1001 52.999 921.5 91.282 764 89.499C606.5 87.716 418 7.8626e-05 251.5 0C85 -7.86259e-05 0 59.9535 0 59.9535V126.5H1440Z"
-			fill="#0898CC">
-	</svg>
+		<svg width="100%" height="auto" viewbox="0 0 1440 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M1440 126.5V84.4997C1440 84.4997 1363 38.999 1171 38.999C1001 52.999 921.5 91.282 764 89.499C606.5 87.716 418 7.8626e-05 251.5 0C85 -7.86259e-05 0 59.9535 0 59.9535V126.5H1440Z"
+				fill="#0898CC">
+		</svg>
 
-	<svg class="-mt-28" width="100%" height="auto" viewBox="0 0 1440 127" fill="none"
-		xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M1440 126.5V84.4997C1440 84.4997 1363 38.999 1171 38.999C1001 52.999 921.5 91.282 764 89.499C606.5 87.716 418 7.8626e-05 251.5 0C85 -7.86259e-05 0 59.9535 0 59.9535V126.5H1440Z"
-			fill="#FFBB29">
-	</svg>
-	<div class="bg-primary -mt-1 h-36">
-		<div class="flex items-end max-w-7xl justify-end bg-primary pt-9 w-96 ">
-			<h1 class="uppercase text-3xl ml-40">Dierendoos</h1>
-		</div>
-		<div class="max-w-6xl mx-auto flex justify-end bg-primary -mt-20">
-			<ul class="list-none">
-				<li>Categorie</li>
-				{% for categorie in categories %}
-				<li class="ml-5">{{categorie.name}}</li>
-				{% endfor %}
-			</ul>
+		<svg class="-mt-28" width="100%" height="auto" viewbox="0 0 1440 127" fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M1440 126.5V84.4997C1440 84.4997 1363 38.999 1171 38.999C1001 52.999 921.5 91.282 764 89.499C606.5 87.716 418 7.8626e-05 251.5 0C85 -7.86259e-05 0 59.9535 0 59.9535V126.5H1440Z"
+				fill="#FFBB29">
+		</svg>
+		<div class="bg-primary -mt-1 h-36">
+			<div class="flex items-end max-w-7xl justify-end bg-primary pt-9 w-96 ">
+				<h1 class="uppercase text-3xl ml-40">Dierendoos</h1>
+			</div>
+			<div class="max-w-6xl mx-auto flex justify-end bg-primary -mt-20">
+				<ul class="list-none">
+					<li>Categorie</li>
+					{% for categorie in categories %}
+					<li class="ml-5">{{categorie.name}}</li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
-		</footer>
+	</footer>
+</body>
+
+</html>
 </body>
 
 </html>
