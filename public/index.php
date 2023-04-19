@@ -35,7 +35,3 @@ if (isset($_POST['logout'])) {
         error(404, 'Controller not found');
     }
 }
-
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
