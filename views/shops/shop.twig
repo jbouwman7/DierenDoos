@@ -1,0 +1,12 @@
+{% extends "./layouts/app.twig" %}
+
+{% block body %}
+	{% for item in items %}
+		<form method="POST" action="">
+			<pre>
+            {{item.name}}
+            </pre>
+            <input type="submit" id="{{item.id}}" name="addCart">
+		</form>
+	{% endfor %}
+{% endblock body %}
