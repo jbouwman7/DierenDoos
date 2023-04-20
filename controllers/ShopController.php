@@ -10,6 +10,8 @@ class ShopController extends BaseController
             "users" => $users,
             "items" => $items,
         ]);
+
+        showTemplate('shops/index.twig');
     }
 
 
