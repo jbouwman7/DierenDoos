@@ -1,5 +1,7 @@
 <?php
 
+use RedBeanPHP\Util\Dump;
+
 require_once '../vendor/autoload.php';
 
 $r = R::setup('mysql:host=localhost;dbname=dierendoos', 'bit_academy', 'bit_academy');
@@ -35,3 +37,5 @@ if (isset($_POST['logout'])) {
         error(404, 'Controller not found');
     }
 }
+
+var_dump($_POST);

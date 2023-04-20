@@ -1,5 +1,7 @@
 <?php
 
+use RedBeanPHP\Util\Dump;
+
 class ShopController extends BaseController
 {
 
@@ -19,8 +21,11 @@ class ShopController extends BaseController
 
     public function shopPost()
     {
-        if ($_POST['addCart']) {
-            
-        }
+            $item = R::dispense('shoppingcart');
+            $item->userId = $_SESSION['user']['id'];
+            $item->itemId = $_POST['itemId'];
+            $item->amount = $_POST['amount'];
+            R::store($item);
+            header('../shop/shop');
     }
 }

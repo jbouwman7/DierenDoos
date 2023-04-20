@@ -3,10 +3,11 @@
 {% block body %}
 	{% for item in items %}
 		<form method="POST" action="">
-			<pre>
-            {{item.name}}
-            </pre>
-            <input type="submit" id="{{item.id}}" name="addCart">
+            <p>{{item.name}}</p>
+			<input type="hidden" id="itemId" name="itemId" value="{{item.id}}">
+			<input type="number" id="amount" name="amount" min="0" value="0">
+			<input type="submit" id="submit" name="submit" value="add to cart">
 		</form>
 	{% endfor %}
+
 {% endblock body %}
