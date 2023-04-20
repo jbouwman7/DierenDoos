@@ -6,9 +6,7 @@ class ShopController extends BaseController
     {
         $categories = R::findAll('categories');
         $items = R::findAll('shopitems');
-        $users = R::findAll('users');
         showTemplate('shops/index.twig', [
-            "users" => $users,
             "categories" => $categories,
             "items" => $items,
         ]);

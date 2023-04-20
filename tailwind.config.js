@@ -20,7 +20,11 @@ module.exports = {
         'contrast': '#0898CC',
         'light': '#FAF6EE',
         'dark': '#130A0A',
+        'white': '#FFFFFF'
       },
+      backgroundImage: {
+        'ped': "url('./public/img/mdi_paw.png')"
+      }
     },
   },
   plugins: [require("tw-elements/dist/plugin.cjs")],
