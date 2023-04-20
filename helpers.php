@@ -10,6 +10,8 @@ function showTemplate($template, $data = [])
     if (isset($_SESSION)) {
         $twig->addGlobal('session', $_SESSION);
     }
+    $cats = R::findAll('categories');
+    $twig->addGlobal('categories', $cats);
     $twig->addExtension(new \Twig\Extension\DebugExtension());
     $twig->display($template, $data);
 }

@@ -1,9 +1,9 @@
 <?php
 
-// class UserController extends BaseController
-// {
-//     private $error = '';
-//     private array $users;
+class AccountController extends BaseController
+{
+    private $error = '';
+    private array $users;
 
 //     public function __construct()
 //     {
@@ -17,24 +17,24 @@
 //             unset($_SESSION['errors']);
 //         }
 
-//         showTemplate('users/login.twig', [
-//             'users' => $this->users,
-//             'error' => $this->error,
-//         ]);
-//     }
+        showTemplate('accounts/login.twig', [
+            'users' => $this->users,
+            'error' => $this->error,
+        ]);
+    }
 
 //     public function loginPost()
 //     {
 //         $userChecked = $this->validUser();
 
-//         if ($userChecked) {
-//             $this->loginUser();
-//             header('location:../binsta');
-//         } else {
-//             $_SESSION['errors']['login'][] = "Invalid username or password";
-//             header('location:login');
-//         }
-//     }
+        if ($userChecked) {
+            $this->loginUser();
+            header('location:index.twig');
+        } else {
+            $_SESSION['errors']['login'][] = "Invalid username or password";
+            header('location:login');
+        }
+    }
 
 //     public function register()
 //     {
@@ -43,10 +43,10 @@
 //             unset($_SESSION['errors']);
 //         }
 
-//         showTemplate('users/register.twig', [
-//             'error' => $this->error,
-//         ]);
-//     }
+        showTemplate('accounts/register.twig', [
+            'error' => $this->error,
+        ]);
+    }
 
 //     public function registerPost()
 //     {

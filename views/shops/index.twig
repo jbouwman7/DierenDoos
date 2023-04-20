@@ -1,98 +1,100 @@
 {% extends "./layouts/app.twig" %}
 
+{% block hero %}
+	<section id="bgimage" class="">
+		<img src="../../public/img/pexels-pixabay-164186 1.png" alt="" class="w-full">
+	</section>
+{% endblock hero %}
+
 {% block body %}
 
-<section id="categories" class="flex">
-	{% for categorie in categories %}
-	<div class="w-52 bg-secondary">
-		<img src="../../public/img/categories/{{categorie.image}}" alt="">
-		<p class="text-center">{{categorie.name}}</p>
-	</div>
-	{% endfor %}
-</section>
-
-
-<h1>Favoriet van elk dier</h1>
-<section id"favorite_animals" class="flex">
-	{% for item in items %}
-	<div class="rounded-t-lg bg-light w-56 h-48">
-		<img class="ml-5 mt-5" src="../../public/img/items/7465737470726f64756374312e6a7067.jpeg" alt="">
-		<div class="bg-secondary rounded-b-lg h-9">
-			<p>{{item.name}} €{{item.price}}</p>
+	<section id="categories" class="flex mt-40">
+		<div class="grid grid-cols-4 gap-4 rounded-t-lg w-full">
+			{% for categorie in categories %}
+				<div class="rounded-lg w-56 h-48 bg-secondary place-items-center mx-auto text-center">
+					<img class="mx-auto -mt-20 h-40 w-40" src="../../public/img/categories/{{categorie.image}}" alt="">
+					<p>{{categorie.name}}</p>
+				</div>
+			{% endfor %}
 		</div>
-	</div>
-	{% endfor %}
+	</section>
+
+	<section id="categories" class="flex mt-40">
+		<div class="grid grid-cols-4 gap-4 rounded-t-lg space-x-4 w-full h-48 ">
+			{% for categorie in categories %}
+				<div class="rounded-lg w-56 h-48 bg-secondary place-items-center text-center">
+					<img class="ml-5 -mt-20 h-40 w-40" src="../../public/img/categories/{{categorie.image}}" alt="">
+					<p>{{categorie.name}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+
+<section id="questions">
+	<div class="grid grid-cols-2 gap-4 mt-40">
+		<div class="flex flex-col items-start"> {# Dit is de linker kolom #}
+			<h1 class="text-3xl text-start leading-7 font-semibold">Vragen over onze producten?</h1>
+			<p class="mt-1 text-sm text-start leading-6 w-4/5 sm:font">Heeft u vragen over allergieën of andere dingen
+				van onze
+				producten?
+				contacteer ons gerust</p>
+		</div>
+		<div> {# Dit is de rechter kolom #}
+			<form action="">
+				<div class="space-y-12">
+					<div class="pb-12">
+						<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+							<div class="sm:col-span-3">
+								<label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">
+									Voornaam</label>
+								<div class="mt-2">
+									<input type="text" name="first-name" id="first-name" autocomplete="given-name"
+										class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
+								</div>
+							</div>
+
+							<div class="sm:col-span-3">
+								<label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Achternaam</label>
+								<div class="mt-2">
+									<input type="text" name="last-name" id="last-name" autocomplete="family-name"
+										class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
+								</div>
+							</div>
+						</div>
+
+						<div class="sm:col-span-4 mt-5">
+							<label for="email" class="blcok text-sm font-medium leading-6">Email address</label>
+							<div class="mt-2">
+								<input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 shadow-sm ">
+								</div>
+						</div>
+						<div class="col-span-full mt-5">
+							<label for="phonenumber" class="block text-sm font-medium leading-6">Telefoon nummer</label>
+							<input type="text" name="phonenumber" id="phonenumber" class="block w-full rounded-md border-0 py-1.5 shadow-sm">
+						</div>
+
+						<div class="col-span-full mt-5">
+							<label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
+							<div class="mt-2">
+								<textarea id="about" name="about" rows="3"
+									class="resize-none block w-full rounded-md border-0 text-gray-900 shadow-sm "></textarea>
+							</div>
+						</div>
+						<div class="flex items-center justify-center gap-x-6 px-4 py-4 sm:px-8">
+							<button type="submit"
+								class="rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus:visible:outline-2 focus:visible:outline-offset-2">Save</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			</section>
+
+
+<section class="brand mt-14 text-center text-3xl">
+	<h1>Door ons verkochte merken</h1>
 </section>
 
-<section class="questions mt-14">
-	<h1 class="text-base font-semibold leading-7 text-gray-900">Vragen over onze producten?</h1>
-	<p class="mt-1 text-sm leading-6 text-gray-600">Heeft u vragen over allergieën of andere dingen van onze producten?
-		contacteer ons gerust</p>
-	<form>
-		<div class="space-y-12">
 
-			<div class="border-b border-gray-900/10 pb-12">
-
-				<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-					<div class="sm:col-span-3">
-						<label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">
-							Voornaam</label>
-						<div class="mt-2">
-							<input type="text" name="first-name" id="first-name" autocomplete="given-name"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-						</div>
-					</div>
-
-					<div class="sm:col-span-3">
-						<label for="last-name"
-							class="block text-sm font-medium leading-6 text-gray-900">Achternaam</label>
-						<div class="mt-2">
-							<input type="text" name="last-name" id="last-name" autocomplete="family-name"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-						</div>
-					</div>
-
-					<div class="sm:col-span-4">
-						<label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
-							address</label>
-						<div class="mt-2">
-							<input id="email" name="email" type="email" autocomplete="email"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-						</div>
-					</div>
-
-					<div class="col-span-full">
-						<label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Telefoon
-							nummer</label>
-						<div class="mt-2">
-							<input type="text" name="street-address" id="street-address" autocomplete="street-address"
-								class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-						</div>
-					</div>
-
-					<div class="col-span-full">
-						<label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
-						<div class="mt-2">
-							<textarea id="about" name="about" rows="3"
-								class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
-						</div>
-					</div>
-					
-					
-					</div>
-					</div>
-					
-					</div>
-					
-					</form>
-					
-					
-					</section>
-					
-					<section class="brand mt-14">
-						<h1>Door ons verkochte merken</h1>
-					</section>
-					
-					<footer class="mt-14">
-					</footer>
 {% endblock %}

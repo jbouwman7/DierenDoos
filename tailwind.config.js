@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.twig"],
+  content: [
+    "./views/**/*.twig",
+    
+  ],
   theme: {
     colors: {
       'primary': '#FFBB29',
@@ -21,6 +24,5 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
   ],
 }
