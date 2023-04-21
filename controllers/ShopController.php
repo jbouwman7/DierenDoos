@@ -4,6 +4,7 @@ class ShopController extends BaseController
 {
     public function index()
     {
+        $categories = R::findAll('categories');
         $items = R::findAll('shopitems');
         showTemplate('shops/index.twig', [
             "categories" => $categories,
@@ -12,6 +13,4 @@ class ShopController extends BaseController
 
         showTemplate('shops/index.twig');
     }
-
-
 }
