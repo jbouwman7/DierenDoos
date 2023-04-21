@@ -2,14 +2,8 @@
 module.exports = {
   content: [
     "./views/**/*.twig",
-    
   ],
   theme: {
-    colors: {
-      'primary': '#FFBB29',
-      'secondary': '#FCE055',
-      'light': '#FAF6EE',
-    },
     container: {
       center: true,
     },
@@ -23,6 +17,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-  ],
 }
