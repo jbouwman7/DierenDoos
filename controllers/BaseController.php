@@ -7,79 +7,79 @@ class BaseController
         $bean = R::findOne($typeOfBean, 'id =' . $queryStringKey);
         return $bean;
     }
-    // public function validUser()
-    // {
-    //     $users = R::findAll('users');
-    //     foreach ($users as $user) {
-    //         if ($user['username'] == $_POST['username']) {
-    //             if (password_verify($_POST['password'], $user['password'])) {
-    //                 $userChecked = R::findOne('users', 'username = ? AND password = ? ', [$user['username'], $user['password']]);
-    //             }
-    //         }
-    //     }
-    //     return $userChecked;
-    // }
+    public function validUser()
+    {
+        $users = R::findAll('users');
+        foreach ($users as $user) {
+            if ($user['username'] == $_POST['username']) {
+                if (password_verify($_POST['password'], $user['password'])) {
+                    $userChecked = R::findOne('users', 'username = ? AND password = ? ', [$user['username'], $user['password']]);
+                }
+            }
+        }
+        return $userChecked;
+    }
 
-    // public function authorizeUser()
-    // {
-    //     if (!isset($_SESSION['user'])) {
-    //         header('location:../user/login');
-    //         exit;
-    //     }
-    // }
+    public function authorizeUser()
+    {
+        if (!isset($_SESSION['user'])) {
+            header('location:../user/login');
+            exit;
+        }
+    }
 
-    // public function loginUser()
-    // {
-    //     $userChecked = $this->validUser();
-    //     $_SESSION['user']['id'] = $userChecked['id'];
-    //     $_SESSION['user']['name'] = $userChecked['username'];
-    // }
+    public function loginUser()
+    {
+        $userChecked = $this->validUser();
+        $_SESSION['user']['id'] = $userChecked['id'];
+        $_SESSION['user']['name'] = $userChecked['username'];
+    }
 
-    // public function validRegister()
-    // {
-    //     unset($_SESSION['errors']);
-    //     if ($_POST['username'] == '' || $_POST['password'] == '') {
-    //         $_SESSION['errors']['register'][] = 'All fields are required';
-    //     }
+    public function validRegister()
+    {
+        unset($_SESSION['errors']);
+        if ($_POST['username'] == '' || $_POST['password'] == '') {
+            $_SESSION['errors']['register'][] = 'All fields are required';
+        }
 
-    //     $user = R::FindOne('users', 'username = ? ', [$_POST['username']]);
+        $user = R::FindOne('users', 'username = ? ', [$_POST['username']]);
 
-    //     if ($_POST['username'] == $user['username']) {
-    //         $_SESSION['errors']['register'][] = 'Username is already in use';
-    //     }
+        if ($_POST['username'] == $user['username']) {
+            $_SESSION['errors']['register'][] = 'Username is already in use';
+        }
 
-    //     if ($_POST['password'] != $_POST['r-password']) {
-    //         $_SESSION['errors']['register'][] = 'Passwords did not match';
-    //     }
+        if ($_POST['password'] != $_POST['r-password']) {
+            $_SESSION['errors']['register'][] = 'Passwords did not match';
+        }
 
-    //     return empty($_SESSION['errors']);
-    // }
+        return empty($_SESSION['errors']);
+    }
 
-    // public function validAccountEdit()
-    // {
-    //     unset($_SESSION['errors']);
-    //     if ($_POST['username'] == '') {
-    //         $_SESSION['errors']['edit'][] = 'Username is required';
-    //     }
+    public function validAccountEdit()
+    {
+        unset($_SESSION['errors']);
+        if ($_POST['username'] == '') {
+            $_SESSION['errors']['edit'][] = 'Username is required';
+        }
 
-    //     $user = R::FindOne('users', 'username = ? AND username != ?', [$_POST['username'], $_SESSION['user']['name']]);
+        $user = R::FindOne('users', 'username = ? AND username != ?', [$_POST['username'], $_SESSION['user']['name']]);
 
-    //     if ($user['username']) {
-    //         $_SESSION['errors']['edit'][] = 'Username is already in use';
-    //     }
+        if ($user['username']) {
+            $_SESSION['errors']['edit'][] = 'Username is already in use';
+        }
 
-    //     if ($_POST['password'] != $_POST['r-password']) {
-    //         $_SESSION['errors']['edit'][] = 'Passwords did not match';
-    //     }
+        if ($_POST['password'] != $_POST['r-password']) {
+            $_SESSION['errors']['edit'][] = 'Passwords did not match';
+        }
 
-    //     return empty($_SESSION['errors']);
-    // }
+        return empty($_SESSION['errors']);
+    }
 
     public function moveUploadedImg($location)
     {
         $tmpName = $_FILES['image']['tmp_name'];
         $fileType = substr($_FILES['image']['type'], strrpos($_FILES['image']['type'], '/') + 1);
-        $name = strtolower(bin2hex($_FILES['image']['name']). '.' . $fileType);
+        $name = strtolower(bin2hex($_FILES['image']['name']) . '.' . $fileType);
         $targetDir = "$_SERVER[DOCUMENT_ROOT]/public/img/$location/$name";
         move_uploaded_file($tmpName, "$targetDir");
     }
@@ -137,5 +137,4 @@ class BaseController
 
         return empty($_SESSION['errors']);
     }
-
 }
