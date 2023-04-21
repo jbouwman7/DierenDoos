@@ -2,14 +2,8 @@
 module.exports = {
   content: [
     "./views/**/*.twig",
-    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
-    colors: {
-      'primary': '#FFBB29',
-      'secondary': '#FCE055',
-      'light': '#FAF6EE',
-    },
     container: {
       center: true,
     },
@@ -20,13 +14,7 @@ module.exports = {
         'contrast': '#0898CC',
         'light': '#FAF6EE',
         'dark': '#130A0A',
-        'white': '#FFFFFF'
       },
-      backgroundImage: {
-        'ped': "url('./public/img/mdi_paw.png')"
-      }
     },
   },
-  plugins: [require("tw-elements/dist/plugin.cjs")],
-  darkMode: "class"
 }

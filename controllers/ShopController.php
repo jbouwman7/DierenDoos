@@ -10,7 +10,5 @@ class ShopController extends BaseController
             "categories" => $categories,
             "items" => $items,
         ]);
-
-        showTemplate('shops/index.twig');
     }
 }

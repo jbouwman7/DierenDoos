@@ -2,295 +2,264 @@
 
 {% block hero %}
 	<section id="bgimage" class="">
-		<img src="../../public/img/pexels-pixabay-164186 1.png" alt="" class="w-full">
+		<img src="../../public/img/misc/pexels-pixabay-164186 1.png" alt="" class="w-full">
 	</section>
 {% endblock hero %}
 
 {% block body %}
 
-<section id="categories" class="flex mt-40">
-	<svg class="rotate-[160deg] -mt-32 absolute flex left-3/4 -ml-[270.355px] w-auto h-[223.8px] -z-10"
-		viewBox="0 0 903 822" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g filter="url(#filter0_d_32_44)">
-			<path
-				d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z"
-				fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges" />
-		</g>
-		<defs>
-			<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333" filterUnits="userSpaceOnUse"
-				color-interpolation-filters="sRGB">
-				<feFlood flood-opacity="0" result="BackgroundImageFix" />
-				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-					result="hardAlpha" />
-				<feOffset dy="4" />
-				<feGaussianBlur stdDeviation="2" />
-				<feComposite in2="hardAlpha" operator="out" />
-				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-				<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44" />
-				<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape" />
-			</filter>
-		</defs>
-	</svg>
-	<div class="grid grid-cols-4 gap-12 rounded-t-lg w-full mt-16">
-		{% for categorie in categories %}
-		<div class="rounded-lg w-full h-48 bg-secondary place-items-center mx-auto text-center">
-			<img class="mx-auto -mt-20 h-40 w-40" src="../../public/img/categories/{{categorie.image}}" alt="">
-			<p>Alles voor {{categorie.name}}</p>
+	<section id="categories" class="flex mt-40">
+		<svg class="rotate-[160deg] -mt-32 absolute flex left-3/4 -ml-[270.355px] w-auto h-[223.8px] -z-10" viewbox="0 0 903 822" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g filter="url(#filter0_d_32_44)">
+				<path d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z" fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges"/>
+			</g>
+			<defs>
+				<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+					<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+					<feOffset dy="4"/>
+					<feGaussianBlur stddeviation="2"/>
+					<feComposite in2="hardAlpha" operator="out"/>
+					<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+					<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44"/>
+					<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape"/>
+				</filter>
+			</defs>
+		</svg>
+		<div class="grid grid-cols-4 gap-12 rounded-t-lg w-full mt-16">
+			{% for categorie in categories %}
+				<div class="rounded-lg w-full h-48 bg-secondary place-items-center mx-auto text-center">
+					<img class="mx-auto -mt-20 h-40 w-40" src="../../public/img/categories/{{categorie.image}}" alt="">
+					<p>Alles voor
+						{{categorie.name}}</p>
+				</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
-	</div>
-</section>
+	</section>
 
-<section id="animalfavorite" class="mt-40">
-	<svg class="rotate-[190deg] -mt-20 absolute flex left-1/2 -ml-[270.355px] w-auto h-[223.8px] -z-10"
-		viewBox="0 0 903 822" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g filter="url(#filter0_d_32_44)">
-			<path
-				d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z"
-				fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges" />
-		</g>
-		<defs>
-			<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333"
-				filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-				<feFlood flood-opacity="0" result="BackgroundImageFix" />
-				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-					result="hardAlpha" />
-				<feOffset dy="4" />
-				<feGaussianBlur stdDeviation="2" />
-				<feComposite in2="hardAlpha" operator="out" />
-				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-				<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44" />
-				<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape" />
-			</filter>
-		</defs>
-	</svg>
-	<h1 class="text-center text-3xl">Favoriet van elk dier</h1>
-	<div class="flex mt-32">
-		<div class="flex items-center">
-			<div class=""> {# w-full #}
-				<button onclick="prev()" class="p-3 rounded-full bg-light">
-					<svg id="prev" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-						stroke="currentColor" class="w-6 h-6">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-					</svg>
-				</button>
-			</div>
-		</div>
-		<div id="sliderContainer" class="w-full overflow-hidden">
-		
-			<ul id="slider" class="flex w-full duration-700 gap-5">
-				{% for item in items[:8] %}
-				<li>
-					<div class="rounded-lg bg-white h-56 flex justify-center flex-col">
-						<img class="h-44 object-cover rounded-md" src="../../public/img/items/1543518615468184919415181.png"
-							alt="...">
-						{# <h2 class="mt-2 text-2xl font-bold text-gray-700">Some Big Heading</h2> #}
-						<button class="w-full px-6 py-3 rounded-b-lg bg-secondary text-dark flex">
-							<div class="grid grid-cols-4">
-								<p class="w-full col-span-3 text-left">{{item.name}}</p>
-								<p class="col-span-1">{{item.price}}</p>
-							</div>
-						</button>
-					</div>
-				</li>
-				{% endfor %}
-			</ul>
-			</div>
+	<section id="animalfavorite" class="mt-40">
+		<svg class="rotate-[190deg] -mt-20 absolute flex left-1/2 -ml-[270.355px] w-auto h-[223.8px] -z-10" viewbox="0 0 903 822" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g filter="url(#filter0_d_32_44)">
+				<path d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z" fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges"/>
+			</g>
+			<defs>
+				<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+					<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+					<feOffset dy="4"/>
+					<feGaussianBlur stddeviation="2"/>
+					<feComposite in2="hardAlpha" operator="out"/>
+					<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+					<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44"/>
+					<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape"/>
+				</filter>
+			</defs>
+		</svg>
+		<h1 class="text-center text-3xl">Favoriet van elk dier</h1>
+		<div class="flex mt-32">
 			<div class="flex items-center">
-				<div class="w-full">
-					<button onclick="next()" class="p-3 rounded-full"> {# ml-5 #}
-						<svg id="next" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-							stroke="currentColor" class="w-6 h-6">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+				<div
+					class="">
+					{# w-full #}
+					<button onclick="prev()" class="p-3 rounded-full bg-light">
+						<svg id="prev" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
 						</svg>
-			
 					</button>
 				</div>
 			</div>
-	</div>
-</section>
+			<div id="sliderContainer" class="w-full overflow-hidden">
 
-<section id="questions" class="bg-cover bg-center h-full w-full">
-	<svg class="absolute flex left-1/2 -ml-[270.355px] w-auto h-[496.8px] -z-10" viewBox="0 0 903 822" fill="none"
-		xmlns="http://www.w3.org/2000/svg">
-		<g filter="url(#filter0_d_32_44)">
-			<path
-				d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z"
-				fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges" />
-		</g>
-		<defs>
-			<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333"
-				filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-				<feFlood flood-opacity="0" result="BackgroundImageFix" />
-				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-					result="hardAlpha" />
-				<feOffset dy="4" />
-				<feGaussianBlur stdDeviation="2" />
-				<feComposite in2="hardAlpha" operator="out" />
-				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-				<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44" />
-				<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape" />
-			</filter>
-		</defs>
-	</svg>
-	<div class="grid grid-cols-2 gap-4 mt-40">
-		<div class="flex flex-col items-start"> {# Dit is de linker kolom #}
-			<h1 class="text-3xl text-start leading-7 font-semibold">Vragen over onze producten?</h1>
-			<p class="mt-1 text-sm text-start leading-6 w-4/5 sm:font">Heeft u vragen over allergieën of andere dingen
-				van onze
-				producten?
-				contacteer ons gerust</p>
+				<ul id="slider" class="flex w-full duration-700 gap-5">
+					{% for item in items[:8] %}
+						<li>
+							<div class="rounded-lg bg-white h-56 flex justify-center flex-col">
+								<img
+								class="h-44 object-cover rounded-md" src="../../public/img/items/1543518615468184919415181.png" alt="...">
+								{# <h2 class="mt-2 text-2xl font-bold text-gray-700">Some Big Heading</h2> #}
+								<button class="w-full px-6 py-3 rounded-b-lg bg-secondary text-dark flex">
+									<div class="grid grid-cols-4">
+										<p class="w-full col-span-3 text-left">{{item.name}}</p>
+										<p class="col-span-1">{{item.price}}</p>
+									</div>
+								</button>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="flex items-center">
+				<div class="w-full">
+					<button
+						onclick="next()" class="p-3 rounded-full">
+						{# ml-5 #}
+						<svg id="next" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+						</svg>
+
+					</button>
+				</div>
+			</div>
 		</div>
-		<div> {# Dit is de rechter kolom #}
-			<form action="">
-				<div class="space-y-8">
-					<div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-						<div class="sm:col-span-3">
-							<label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">
-								Voornaam</label>
+	</section>
+
+	<section id="questions" class="bg-cover bg-center h-full w-full">
+		<svg class="absolute flex left-1/2 -ml-[270.355px] w-auto h-[496.8px] -z-10" viewbox="0 0 903 822" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g filter="url(#filter0_d_32_44)">
+				<path d="M288.722 1.01264C341.292 -6.66232 396.981 51.5771 413.019 131.938C429.058 211.848 400.1 283.18 347.529 291.307C295.405 299.433 239.27 241.194 222.787 160.832C206.303 80.9225 236.152 9.59054 288.722 1.01264ZM607.262 1.01264C660.278 9.59054 689.681 80.9225 674.088 160.832C657.159 241.194 601.47 299.433 548.9 291.307C495.884 283.18 466.926 211.848 483.41 131.938C499.448 51.5771 555.137 -6.66232 607.262 1.01264ZM50.3741 208.688C101.162 186.566 170.216 226.747 206.303 296.724C240.161 368.056 228.578 443 178.236 465.122C127.893 487.244 59.2843 447.515 24.089 376.634C-11.1063 305.754 1.36802 230.359 50.3741 208.688ZM852.293 208.688C901.299 230.359 913.773 305.754 878.578 376.634C843.382 447.515 774.774 487.244 724.431 465.122C674.088 443 662.505 368.056 696.364 296.724C732.45 226.747 801.504 186.566 852.293 208.688ZM777.892 695.371C779.674 737.809 747.598 784.762 709.284 802.369C629.537 839.389 535.089 762.64 446.433 762.64C357.776 762.64 262.437 842.55 184.027 802.369C139.476 780.247 108.736 721.556 114.528 672.798C122.547 605.529 202.293 569.411 249.517 520.201C312.334 456.544 356.885 336.905 446.433 336.905C535.535 336.905 582.759 454.738 642.903 520.201C692.354 575.28 774.774 621.782 777.892 695.371Z" fill="#0898CC" fill-opacity="0.15" shape-rendering="crispEdges"/>
+			</g>
+			<defs>
+				<filter id="filter0_d_32_44" x="0" y="0.333496" width="902.667" height="821.333" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+					<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+					<feOffset dy="4"/>
+					<feGaussianBlur stddeviation="2"/>
+					<feComposite in2="hardAlpha" operator="out"/>
+					<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+					<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_44"/>
+					<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_44" result="shape"/>
+				</filter>
+			</defs>
+		</svg>
+		<div class="grid grid-cols-2 gap-4 mt-40">
+			<div
+				class="flex flex-col items-start">
+				{# Dit is de linker kolom #}
+				<h1 class="text-3xl text-start leading-7 font-semibold">Vragen over onze producten?</h1>
+				<p class="mt-1 text-sm text-start leading-6 w-4/5 sm:font">Heeft u vragen over allergieën of andere dingen
+									van onze
+									producten?
+									contacteer ons gerust</p>
+			</div>
+			<div>
+				{# Dit is de rechter kolom #}
+				<form action="">
+					<div class="space-y-8">
+						<div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+							<div class="sm:col-span-3">
+								<label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">
+									Voornaam</label>
+								<div class="mt-2">
+									<input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
+								</div>
+							</div>
+
+							<div class="sm:col-span-3">
+								<label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Achternaam</label>
+								<div class="mt-2">
+									<input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
+								</div>
+							</div>
+						</div>
+
+						<div class="sm:col-span-4">
+							<label for="email" class="blcok text-sm font-medium leading-6">Email address</label>
 							<div class="mt-2">
-								<input type="text" name="first-name" id="first-name" autocomplete="given-name"
-									class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
+								<input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 shadow-sm ">
 							</div>
 						</div>
+						<div class="col-span-full">
+							<label for="phonenumber" class="block text-sm font-medium leading-6">Telefoon nummer</label>
+							<input type="text" name="phonenumber" id="phonenumber" class="block w-full rounded-md border-0 py-1.5 shadow-sm">
+						</div>
 
-						<div class="sm:col-span-3">
-							<label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Achternaam</label>
+						<div class="col-span-full">
+							<label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
 							<div class="mt-2">
-								<input type="text" name="last-name" id="last-name" autocomplete="family-name"
-									class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm">
-							</div>
+								<textarea id="about" name="about" rows="3" class="resize-none block w-full rounded-md border-0 text-gray-900 shadow-sm "></textarea>
 							</div>
 						</div>
-
-					<div class="sm:col-span-4">
-						<label for="email" class="blcok text-sm font-medium leading-6">Email address</label>
-						<div class="mt-2">
-							<input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 shadow-sm ">
-							</div>
-							</div>
-					<div class="col-span-full">
-						<label for="phonenumber" class="block text-sm font-medium leading-6">Telefoon nummer</label>
-						<input type="text" name="phonenumber" id="phonenumber" class="block w-full rounded-md border-0 py-1.5 shadow-sm">
-						</div>
-
-					<div class="col-span-full">
-						<label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
-						<div class="mt-2">
-							<textarea id="about" name="about" rows="3"
-								class="resize-none block w-full rounded-md border-0 text-gray-900 shadow-sm "></textarea>
+						<div class="flex items-center justify-center gap-x-6 px-4 py-4 sm:px-8">
+							<button type="submit" class="rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus:visible:outline-2 focus:visible:outline-offset-2">Save</button>
 						</div>
 					</div>
-					<div class="flex items-center justify-center gap-x-6 px-4 py-4 sm:px-8">
-						<button type="submit"
-							class="rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus:visible:outline-2 focus:visible:outline-offset-2">Save</button>
-					</div>
-					</div>
-			</form>
-		</div>
-	</div>
-</section>
-
-
-<section class="brand mt-14 text-center text-3xl">
-	<h1>Door ons verkochte merken</h1>
-<div id="carouselExampleCaptions" class="relative" data-te-carousel-init data-te-carousel-slide>
-	<!--Carousel indicators-->
-	<div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
-		data-te-carousel-indicators>
-		<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="0" data-te-carousel-active
-			class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-			aria-current="true" aria-label="Slide 1"></button>
-		<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="1"
-			class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-			aria-label="Slide 2"></button>
-		<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="2"
-			class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-			aria-label="Slide 3"></button>
-	</div>
-
-	<!--Carousel items-->
-	<div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-		<!--First item-->
-		<div class="relative float-left -mr-[100%] w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none"
-			data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
-			{# <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg" class="block w-full" alt="..." /> #}
-			{# <div class="py-24 flex items-center justify-center bg-green-500 space-x-8"> #}
-				<div class="grid grid-cols-4 gap-12 place-items-center">
-
-					<div class="w-24 h-24 bg-red-500 rounded-full">
-						<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
-					</div>
-					<div class="w-24 h-24 bg-red-500 rounded-full">
-						<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
-					</div>
-					<div class="w-24 h-24 bg-red-500 rounded-full">
-						<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
-					</div>
-					<div class="w-24 h-24 bg-red-500 rounded-full">
-						<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
-					</div>
-
-				</div>
-				{# <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-					<h5 class="text-xl">First slide label</h5>
-					<p>
-						Some representative placeholder content for the first slide.
-					</p>
-				</div> #}
-			</div>
-			<!--Second item-->
-			<div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none"
-				data-te-carousel-item style="backface-visibility: hidden">
-				<img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg" class="block w-full" alt="..." />
-				<div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-					<h5 class="text-xl">Second slide label</h5>
-					<p>
-						Some representative placeholder content for the second slide.
-					</p>
-				</div>
-			</div>
-			<!--Third item-->
-			<div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none"
-				data-te-carousel-item style="backface-visibility: hidden">
-				<img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full" alt="..." />
-				<div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-					<h5 class="text-xl">Third slide label</h5>
-					<p>
-						Some representative placeholder content for the third slide.
-					</p>
-				</div>
+				</form>
 			</div>
 		</div>
+	</section>
 
-		<!--Carousel controls - prev item-->
-		<button
-			class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-			type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
-			<span class="inline-block h-8 w-8">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor" class="h-6 w-6">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-				</svg>
-			</span>
-			<span
-				class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
-		</button>
-		<!--Carousel controls - next item-->
-		<button
-			class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-			type="button" data-te-target="#carouselExampleCaptions" data-te-slide="next">
-			<span class="inline-block h-8 w-8">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor" class="h-6 w-6">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-				</svg>
-			</span>
-			<span
-				class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
-		</button>
-	</div>
-</section>
+
+	<section class="brand mt-14 text-center text-3xl">
+		<h1>Door ons verkochte merken</h1>
+		<div
+			id="carouselExampleCaptions" class="relative" data-te-carousel-init data-te-carousel-slide>
+			<!--Carousel indicators-->
+			<div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" data-te-carousel-indicators>
+				<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="0" data-te-carousel-active class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="1" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-label="Slide 2"></button>
+				<button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="2" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-label="Slide 3"></button>
+			</div>
+
+			<!--Carousel items-->
+			<div
+				class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+				<!--First item-->
+				<div class="relative float-left -mr-[100%] w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none" data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
+					{# <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg" class="block w-full" alt="..." /> #}
+					{# <div class="py-24 flex items-center justify-center bg-green-500 space-x-8"> #}
+						<div class="grid grid-cols-4 gap-12 place-items-center"> <div class="w-24 h-24 bg-red-500 rounded-full">
+							<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
+						</div>
+						<div class="w-24 h-24 bg-red-500 rounded-full">
+							<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
+						</div>
+						<div class="w-24 h-24 bg-red-500 rounded-full">
+							<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
+						</div>
+						<div class="w-24 h-24 bg-red-500 rounded-full">
+							<img src="../../public/img/categories/6361742e706e67.png" class="rounded-full" alt="">
+						</div>
+
+					</div>
+					{# <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+										<h5 class="text-xl">First slide label</h5>
+										<p>
+											Some representative placeholder content for the first slide.
+										</p>
+									</div> #}
+				</div>
+				<!--Second item-->
+				<div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item style="backface-visibility: hidden">
+					<img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg" class="block w-full" alt="..."/>
+					<div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+						<h5 class="text-xl">Second slide label</h5>
+						<p>
+							Some representative placeholder content for the second slide.
+						</p>
+					</div>
+				</div>
+				<!--Third item-->
+				<div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item style="backface-visibility: hidden">
+					<img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full" alt="..."/>
+					<div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+						<h5 class="text-xl">Third slide label</h5>
+						<p>
+							Some representative placeholder content for the third slide.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!--Carousel controls - prev item-->
+			<button class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
+				<span class="inline-block h-8 w-8">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+					</svg>
+				</span>
+				<span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
+			</button>
+			<!--Carousel controls - next item-->
+			<button class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="next">
+				<span class="inline-block h-8 w-8">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+					</svg>
+				</span>
+				<span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
+			</button>
+		</div>
+	</section>
 
 
 {% endblock %}
