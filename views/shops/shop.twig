@@ -2,7 +2,7 @@
 
 {% block body %}
 	{% for item in items %}
-		<form method="POST" action="">
+		<form action="" method="POST">
             <p>{{item.name}}</p>
 			<input type="hidden" id="itemId" name="itemId" value="{{item.id}}">
 			<input type="number" id="amount" name="amount" min="0" value="0">

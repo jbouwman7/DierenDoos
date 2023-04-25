@@ -1,0 +1,9 @@
+{% extends "./layouts/app.twig" %}
+{% block body %}
+{# <pre>
+    {{ dump(cart) }}
+</pre> #}
+{% for item in cart %}
+    <p>{{item.item_id}}</p>
+{% endfor %}
+{% endblock body %}
