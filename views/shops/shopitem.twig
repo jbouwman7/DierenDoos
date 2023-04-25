@@ -1,0 +1,29 @@
+{% extends "./layouts/app.twig" %}
+
+{% block hero %}
+<section id="bgimage" class="">
+    <img src="../../public/img/misc/pexels-pixabay-164186 1.png" alt="" class="w-full object-cover h-72">
+</section>
+
+{% endblock hero %}
+
+{% block body %}
+<section class="flex justify-center mt-32">
+    <div class="grid grid-cols-2 gap-12">
+        <div class="bg-black rounded-md h-auto w-full flex justify-center items-center">
+            <img src="../../public/img/items/1543518615468184919415181.png" class="rounded-md h-96 w-full">
+        </div>
+        <div class="bg-light ml-20">
+            <h1 class="text-3xl font-bold ">Product naam</h1>
+            <p class="w-60">Dit is een beschrijving van het product, lekker kort en simpel.</p>
+            <p class="">9.99</p>
+
+            <button type="submit"
+                class="mt-6 w-full h-8 rounded-md border border-transparent bg-contrast px-4 py-2 text-sm font-medium text-white shadow-sm ">In
+                winkelwagen</button>
+
+        </div>
+    </div>
+
+</section>
+{% endblock %}
