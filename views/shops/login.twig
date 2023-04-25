@@ -2,8 +2,8 @@
 
 {% block body %}
 	<div class="container-form max-w-lg mx-auto flex flex-col gap-y-5">
-		<div class="bg-neutral-900 py-7 px-16">
-			<h1 class="text-5xl mb-6 text-center text-neutral-100">DierenDoos</h1>
+		<div class="py-7 px-16">
+			<h1 class="text-5xl mb-6 text-center text-neutral">Log in op uw account</h1>
 			<form action="" method="post" class="flex flex-col">
 				<input type="text" name="username" id="username" placeholder="Username" class="py-2 px-3 my-1 shadow-md rounded-sm">
 				<input type="password" name="password" id="password" placeholder="Password" class="py-2 px-3 my-1 shadow-md rounded-sm">
@@ -12,10 +12,10 @@
 						{{ error }}
 					</div>
 				{% endif %}
-				<button class="bg-violet-500 hover:bg-violet-600 py-2 px-7 tex mt-3 w-full rounded-sm mx-auto text-neutral-100">Log in</button>
+				<button class="bg-contrast hover:bg-contrast-hover py-2 px-7 tex mt-3 w-full rounded-sm mx-auto text-neutral-100">Log in</button>
 			</form>
 		</div>
-		<div class="bg-neutral-900 py-7 px-16 text-neutral-100">
+		<div class="px-16 text-neutral-100">
 			<a href="./register">or
 				<span class="text-violet-300 hover:cursor-pointer">register now!</span>
 			</a>

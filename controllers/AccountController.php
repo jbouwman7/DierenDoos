@@ -29,7 +29,7 @@ class AccountController extends BaseController
 
         if ($userChecked) {
             $this->loginUser();
-            header('location:index.twig');
+            header('location:../shop');
         } else {
             $_SESSION['errors']['login'][] = "Invalid username or password";
             header('location:login');

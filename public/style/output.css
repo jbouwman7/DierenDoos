@@ -1,5 +1,6 @@
 /*
 ! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -859,7 +860,17 @@ video {
   border-radius: 0.125rem;
 }
 
-.bg-neutral-800 {
+.bg-contrast {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 152 204 / var(--tw-bg-opacity));
+}
+
+.bg-contrast {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 152 204 / var(--tw-bg-opacity));
+}
+
+.bg-light {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
@@ -868,9 +879,9 @@ video {
   border-width: 1px;
 }
 
-.bg-red-300 {
+.bg-violet-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
 }
 
 .bg-violet-500 {
@@ -1043,8 +1054,14 @@ video {
   cursor: pointer;
 }
 
-.hover\:fill-contrast:hover {
-  fill: #0898CC;
+.hover\:bg-contrast-hover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 134 181 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-violet-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
 
 .hover\:text-contrast:hover {

@@ -10,7 +10,7 @@ session_start();
 
 if (isset($_POST['logout'])) {
     session_destroy();
-    header('location:../accounts/login');
+    header('location:../account/login');
 } else {
     $controllerName = ucwords($path[0]) ?: 'Shop';
     $controller = $controllerName . 'Controller';
